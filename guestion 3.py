@@ -2,13 +2,13 @@ import random, time
 import matplotlib.pyplot as plt
 
 temps = []
-humidity_data = [] # Initialize an empty list for humidity data
+humidity_data = [] 
 
 for t in range(10):
     temp = 25 + random.uniform(-1, 1)
-    humidity = random.uniform(40, 60) # Generate random humidity between 40 and 60
+    humidity = random.uniform(40, 60)
     temps.append(temp)
-    humidity_data.append(humidity) # Append humidity to the list
+    humidity_data.append(humidity) 
     
 time.sleep(0.5)
 
@@ -31,18 +31,19 @@ try:
 except IOError as e:
     print(f"Error writing to humidity.txt: {e}")
 
-plt.figure(figsize=(10, 6)) # Make the plot a bit larger for better readability
-plt.plot(temps, marker='o', linestyle='-', color='red') # Plot temperature with markers and red color
+plt.figure(figsize=(10, 6))
+plt.plot(temps, marker='o', linestyle='-', color='red')
 plt.xlabel("Time (s)")
 plt.ylabel("Temperature (C)")
 plt.title("Temperature Log")
-plt.grid(True) # Add a grid for better readability
+plt.grid(True)
 plt.show()
 
-plt.figure(figsize=(10, 6)) # Create a new figure for humidity
-plt.plot(humidity_data, marker='o', linestyle='-', color='blue') # Plot humidity with markers and blue color
+plt.figure(figsize=(10, 6))
+plt.plot(humidity_data, marker='o', linestyle='-', color='blue') 
 plt.xlabel("Time (s)")
 plt.ylabel("Humidity (%)")
 plt.title("Humidity Log")
-plt.grid(True) # Add a grid for better readability
+plt.grid(True) 
 plt.show()
+
